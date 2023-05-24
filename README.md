@@ -8,8 +8,9 @@
 1. Необходимо подключиться к БД
 Доступ к базе осуществляется с помощью команды ```psql -U morty -d scooter_rent.```
 Пароль: smith
-2. Для вывода списка логинов курьеров с количеством их заказов в статусе «В доставке» (поле inDelivery = true), необходимо объединить данные из двух таблиц: Couriers и Orders с помощью команды LEFT JOIN					
-```scooter_rent=# SELECT c."login"", COUNT(o."inDelivery")
+2. Для вывода списка логинов курьеров с количеством их заказов в статусе «В доставке» (поле inDelivery = true), необходимо объединить данные из двух таблиц: Couriers и Orders с помощью команды LEFT JOIN
+```					
+scooter_rent=# SELECT c."login"", COUNT(o."inDelivery")
 scooter_rent=# FROM "Couriers"" AS c
 scooter_rent=# LEFT JOIN "Orders"" AS o ON c.id = o."courierId""
 scooter_rent=# WHERE o."inDelivery"" = true
